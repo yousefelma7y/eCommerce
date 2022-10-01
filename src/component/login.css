@@ -1,0 +1,45 @@
+.login-page{ 
+    background-color: #00BFA6;
+    padding-top: 110px;
+    padding-bottom: 100px;
+}
+
+.log-h{
+    color: #00BFA6;
+}
+
+.login-btn{
+    background-color: #00BFA6;
+    color: white;
+    border: 0px;
+    padding: 10px;
+}
+.login-input{
+    border: 0px;
+    padding: 10px;
+}
+.forget-link{
+    color: #00BFA6;
+}
+.forget-link:hover { 
+    color: #099f8b; 
+}
+.login-btn:hover {
+    background-color: #099f8b;
+}
+
+
+
+@media (max-width: 991px) { 
+    .login-image{
+        display: none;
+    }
+    .login-card{
+        background-image: url('../../public/assets/login.png');      
+        background-repeat: no-repeat; 
+    }
+    .login-input{ 
+        background-color: rgba(192, 190, 190, 0.354);
+    }
+    
+}
