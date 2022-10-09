@@ -1,4 +1,5 @@
 import React , {useState ,useEffect} from 'react'
+import { Button } from 'react-bootstrap';
 
 import Card from 'react-bootstrap/Card';
 import Skeleton from 'react-loading-skeleton';
@@ -9,7 +10,16 @@ const Products = () => {
     const [data ,setData] = useState([]);
     const [filter ,setFilter] = useState(data) ;
     const [loading ,setLoading] = useState(false) ;
+    const [paginationElements ,setPaginationElements ] = useState(8);
+
     let componentMounted =true ;
+
+
+    const slice = filter.slice(0,paginationElements)
+
+    const loadMore = () => {
+      setPaginationElements(paginationElements + 8) ;
+    }
 
     useEffect(() => {
         const getProducts = async () => {
@@ -61,7 +71,7 @@ const Products = () => {
             <button className="btn btn-outline-dark me-2 m-2 col-md-2 col-3" onClick={() =>filterProduct("Furniture")}>Furniture </button>
             <button className="btn btn-outline-dark me-2 m-2 col-md-2 col-4" onClick={() =>filterProduct("Electronics")}>Electronics </button>
          </div>
-         {filter.map((product)=>{
+         {slice.map((product)=>{
             return(
                <div className="col-lg-3 col-md-4 mb-4 " key={product.id}>
                 
@@ -79,6 +89,7 @@ const Products = () => {
                </div>
             )
          })}
+         <Button className='col-4 col-md-5 col-lg-2' onClick={() => loadMore()} variant="outline-primary">LOAD MORE</Button>
       </>
       )
     

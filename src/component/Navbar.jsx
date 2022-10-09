@@ -2,7 +2,7 @@ import React from 'react';
 import {NavLink} from 'react-router-dom' ;
 import { useSelector } from 'react-redux';
 import { Navbar, Nav,Container } from "react-bootstrap";
-import { FaShopify } from 'react-icons/fa';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 
 const Navbarr = () => {
     const state = useSelector((state)=> state.handleCart)
@@ -11,7 +11,7 @@ const Navbarr = () => {
     <div>      
         <Navbar bg="light" expand="lg" className='bg-light bg-white py-3 shadow-sm'>
         <Container>
-            <NavLink to="/" className="navbar-brand fw-bold fs-4"><FaShopify className='fs-1'/> SOUQ</NavLink>
+            <NavLink to="/" className="navbar-brand fw-bold fs-4"><AiOutlineShoppingCart className='fs-1'/> SOUQ</NavLink>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mx-auto mb-2 mb-lg-0">
