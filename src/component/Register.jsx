@@ -2,6 +2,7 @@ import React from 'react'
 import './register.css' ;
 import { BsGoogle } from 'react-icons/bs';
 import { motion } from "framer-motion" ;
+import { Link } from 'react-router-dom';
 
 
 const Register = () => {
@@ -20,7 +21,7 @@ const Register = () => {
                 className='col-12  fw-bold log-h'>SIGN UP HERE</motion.h1>
                 
                 <motion.p initial={{opacity:0 ,x:-350 }} animate={{opacity:1 ,x:0}} transition={{delay:0.2}} className='fw-bold text-muted col-12'>
-                        Already a member ? <a href="./login">Log In</a>
+                        Already a member ? <Link to="/login">Log In</Link>
                 </motion.p>
 
                 <motion.label initial={{opacity:0 ,x:350 }} animate={{opacity:1 ,x:0}} transition={{delay:0.3}} className='col-12 mt-4'>
