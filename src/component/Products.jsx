@@ -14,7 +14,7 @@ const Products = () => {
     let componentMounted =true ;
 
 
-    const slice = filter.slice(0,paginationElements)
+    const oneSlice = filter.slice(0,paginationElements) ;
 
     const loadMore = () => {
       setPaginationElements(paginationElements + 8) ;
@@ -23,7 +23,7 @@ const Products = () => {
     useEffect(() => {
         const getProducts = async () => {
          setLoading(true) ;
-         const response = await fetch("https://api.escuelajs.co/api/v1/products");
+         const response = await fetch("https://api.escuelajs.co/api/v1/products?limit=100&offset=100");
          if(componentMounted) {
             setData(await response.clone().json());
             setFilter(await response.json());
@@ -70,7 +70,7 @@ const Products = () => {
             <button className="btn btn-outline-dark me-2 m-2 col-md-2 col-3" onClick={() =>filterProduct("Furniture")}>Furniture </button>
             <button className="btn btn-outline-dark me-2 m-2 col-md-2 col-4" onClick={() =>filterProduct("Electronics")}>Electronics </button>
          </div>
-         {slice.map((product)=>{
+         {oneSlice.map((product)=>{
             return(
                <div className="col-lg-3 col-md-4 mb-4 " key={product.id}>
                 
